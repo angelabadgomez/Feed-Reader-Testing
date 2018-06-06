@@ -90,17 +90,17 @@ $(function() {
         // there is at least a single entry within each feed
         beforeEach( (done)=> {
             // calls Udacity Blog feed
-            loadFeed(0, ()=> { done(); } );
+            loadFeed(0, ()=> {} );
             // calls CSS Tricks feed
-            loadFeed(1, ()=> { done(); } );
+            loadFeed(1, ()=> {} );
             // calls HTML5 Rocks feed
-            loadFeed(2, ()=> { done(); } );
+            loadFeed(2, ()=> {} );
             // calls Linear Digressions feed
             loadFeed(3, ()=> { done(); } );
         });
 
         it("there is at least a single entry within each feed", ()=> {
-          articles = $('article.entry').length;
+          articles = $('.feed .entry').length;
           expect(articles).not.toBeLessThan(1);
         });
     });
